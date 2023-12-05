@@ -57,3 +57,42 @@ main {
   position:absolute;
   left:47.5%;top:48%;
 }
+
+.cont-login {
+    width: 40%;
+    margin: auto;
+    margin-top: 10%;
+    background-color: #f1f1fb;
+    padding: 2%;
+    border-radius: 7px;
+}
+
+.cont-form-register {
+    background-color: white;
+    width: 50%;
+    margin-left: 10%;
+    margin-top: 2%;
+    padding: 1%;
+    border-radius: 3px;
+}
+
+.req {
+    color:red;
+}
+
+.campo {
+    margin-bottom:1vh;
+}
+
+.fondo-login {
+    background-color: #e7e7ea;
+}
+
+.my-label {
+    color: black !important;
+    font-size: large;
+}
+
+.error-msg {
+    color:red;
+}

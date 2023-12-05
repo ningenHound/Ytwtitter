@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabs = document.querySelectorAll('.tabs');
 
     if(tabs.length > 0) {
-        M.Tabs.init(tabs, {});
+        M.Tabs.init(tabs, {swipeable:true});
     }
 
     //mostrarSpinner(true);
@@ -26,7 +26,6 @@ const getTweetsByUser = (userName) => {
     mostrarSpinner(true);
     fetch(`http://localhost:8000/${userName}/tweets/`).then(res => {
         mostrarSpinner(false);
-        console.log(data);
         res.json().then(data => {
             console.log(data);
         });
@@ -34,4 +33,12 @@ const getTweetsByUser = (userName) => {
       mostrarSpinner(false);
       console.error("error en la consulta: " + error);
     });
-  }
+}
+
+const countCharacters = (idInput, idCounter, maxChars) => {
+    let currentInput = document.getElementById(idInput);
+    let currentCounter = document.getElementById(idCounter);
+    let numOfEnteredChars = currentInput.value.length;
+    let counter = maxNumOfChars - numOfEnteredChars;
+    currentCounter.textContent = counter;
+};
