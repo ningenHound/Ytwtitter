@@ -16,11 +16,12 @@ class UserController extends Controller
                                 users.name,
                                 tweets.content,
                                 tweets.created_at
-                                from tweets 
-                                inner join users on users.id=tweets.author_id
-                                where users.name=?', [$name]
+                                from tweets, users
+                                where users.id=tweets.author_id
+                                and users.name=?', [$name]
                             );
 
         return response()->json($tweets);
     }
+
 }
