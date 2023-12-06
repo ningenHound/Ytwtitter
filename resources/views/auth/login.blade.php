@@ -10,25 +10,26 @@
     <!-- <div class="aviso">
         <span></span><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     </div> -->
-    <div class="cont-login">
-        <form method="POST" action="/login">
-            @csrf
-            <div>
-                <label class="my-label">Nombre de Usuario</label>
-                <input type="text" name="name" id="name" required="true">
-            </div>
-            <div>
-                <label class="my-label">Contraseña</label>
-                <input type="password" name="password" id="password" required="true">
-            </div>
-            <div>
-                <input class="btn btn-app" type="submit" value="Ingresar">
-            </div>
-            <div>
-                <a href="/register">Registrarse</a>
-            </div>
-        </form>
+    <div class="row cont-login">
+        <div class="col l4 m12 s12">&nbsp;</div>
+        <div class="col l4 m12 s12">
+            <form method="POST" action="/login">
+                @csrf
+                <div>
+                    <label class="my-label">Nombre de Usuario</label>
+                    <input type="text" name="name" id="name" required="true">
+                </div>
+                <div>
+                    <label class="my-label">Contraseña</label>
+                    <input type="password" name="password" id="password" required="true">
+                </div>
+                <div>
+                    <input class="btn btn-app" type="submit" value="Ingresar">
+                </div>
+            </form>
+            <h6>¿No eres usuario aún? <a href="/register">Regístrate</a></h6>
+        </div>
+        <div class="col l4 m12 s12">&nbsp;</div>
     </div>
-</div>
 </body>
 </html>

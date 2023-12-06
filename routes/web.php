@@ -5,6 +5,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\FollowController;
+use App\Http\Controllers\TweetController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,13 +26,23 @@ use App\Http\Controllers\RegisterController;
 //     //return view('welcome');
 // });
 
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
-
 Route::post('/login', [LoginController::class, 'authenticate']);
 
 Route::get('/register', [RegisterController::class, 'create']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/{name}/tweets', [UserController::class, 'getTweetsByUserName']); //->middleware('auth');
+Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+
+Route::get('/{name}', [HomeController::class, 'profile'])->middleware('auth');
+
+Route::get('/follow/{name}', [FollowController::class, 'follow'])->middleware('auth');
+
+Route::get('/stopFollow/{name}', [FollowController::class, 'endFollow'])->middleware('auth');
+
+//Route::get('/{name}/tweets', [UserController::class, 'getTweetsByUserName'])->middleware('auth');
+
+Route::post('/postTweet', [TweetController::class, 'create'])->middleware('auth');
+
+
 

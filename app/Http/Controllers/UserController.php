@@ -18,7 +18,7 @@ class UserController extends Controller
                                 tweets.created_at
                                 from tweets, users
                                 where users.id=tweets.author_id
-                                and users.name=?', [$name]
+                                and users.name=? order by tweets.created_at desc', [$name]
                             );
 
         return response()->json($tweets);

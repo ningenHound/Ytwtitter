@@ -6,6 +6,7 @@
     <meta name="description" content="app para envío de mensajes cortos (clon de twitter)">
     <meta name="keywords" content="test, educacion, web, software, desarrollo, paraguay">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 @include('parts.css')
 @yield('css')
 </head>

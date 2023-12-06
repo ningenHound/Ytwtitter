@@ -11,6 +11,8 @@
         <span></span><span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span>
     </div> -->
     <div class="cont-form-register">
+        <h5>Ingresa tus datos para registrarte</h4>&nbsp;<small>(<span style="color:red">*</span>): campos requeridos</small>
+        <hr />
         <form method="POST" action="/register">
             @csrf
             <div class="campo">
@@ -54,6 +56,7 @@
                 <input class="btn btn-app" type="submit" value="Registrarse">
             </div>
         </form>
+        <h6>¿Ya tienes una cuenta? <a href="/login">Iniciar Sesión</a></h6>
     </div>
 </div>
 </body>
