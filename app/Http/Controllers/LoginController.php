@@ -20,16 +20,14 @@ class LoginController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
  
-            return redirect()->intended('dashboard');
+            return redirect('/');
         }
         
  
-        // return back()->withErrors([
-        //     'email' => 'The provided credentials do not match our records.',
-        // ])->onlyInput('email');
+        //dd("error en el login");
         return back()->withErrors([
-            'name' => 'The provided credentials do not match our records.',
-        ])->onlyInput('name');
+            'name' => 'usuario o contraseña incorrectos',
+        ]);
     }
 
     public function logout(Request $request): RedirectResponse
@@ -40,7 +38,7 @@ class LoginController extends Controller
     
         $request->session()->regenerateToken();
     
-        return redirect('/');
+        return redirect('/login');
     }
 
 }

@@ -34,17 +34,18 @@ Route::get('/register', [RegisterController::class, 'create']);
 
 Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/', [HomeController::class, 'index'])->middleware('auth');
+Route::middleware(['auth'])->group(function () {
 
-Route::get('/{name}', [HomeController::class, 'profile'])->middleware('auth');
+    Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/follow/{name}', [FollowController::class, 'follow'])->middleware('auth');
+    Route::get('/follow/{name}', [FollowController::class, 'follow']);
 
-Route::get('/stopFollow/{name}', [FollowController::class, 'endFollow'])->middleware('auth');
+    Route::get('/stopFollow/{name}', [FollowController::class, 'endFollow']);
 
-//Route::get('/{name}/tweets', [UserController::class, 'getTweetsByUserName'])->middleware('auth');
+    Route::post('/postTweet', [TweetController::class, 'create']);
 
-Route::post('/postTweet', [TweetController::class, 'create'])->middleware('auth');
+    Route::get('/{name}', [HomeController::class, 'profile']);
+});
 
 
 
