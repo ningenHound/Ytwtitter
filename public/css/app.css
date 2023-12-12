@@ -2,6 +2,30 @@ header, main, footer {
     padding-left: 300px;
 }
 
+@font-face {
+    font-family: 'Material Icons';
+    font-style: normal;
+    font-weight: 400;
+    /* src: url(https://fonts.gstatic.com/s/materialicons/v140/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2'); */
+    src:url('../fonts/fonts-materialize.woff2');
+  }
+  
+  .material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -moz-font-feature-settings: 'liga';
+    -moz-osx-font-smoothing: grayscale;
+  }
+
 @media only screen and (max-width : 992px) {
     header, main, footer {
         padding-left: 0;
@@ -93,6 +117,9 @@ main {
 
 .error-msg {
     color:red;
+    color:white;
+    border-radius: 5px;
+    padding:1%;
 }
 
 textarea {
@@ -111,6 +138,11 @@ textarea::placeholder {
 #char-counter {
     font-size: small;
     opacity: 0.5;
+}
+
+.error-msg {
+    color:white;
+    background-color: red;
 }
 
 /* para móviles */
